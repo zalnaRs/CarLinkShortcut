@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace = "cf.zalnars.carlinkshortcut"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "cf.zalnars.carlinkshortcut"
         minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        targetSdk = 34
+        versionCode = 2
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -34,7 +34,7 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.core:core-ktx:1.13.1")
     //implementation("androidx.appcompat:appcompat:1.6.1")
     //implementation("com.google.android.material:material:1.8.0")
     //implementation("androidx.constraintlayout:constraintlayout:2.1.4")
