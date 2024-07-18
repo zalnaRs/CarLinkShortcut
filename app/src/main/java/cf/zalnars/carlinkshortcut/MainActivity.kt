@@ -5,11 +5,21 @@ import android.content.Intent
 import android.os.Bundle
 
 class MainActivity : Activity() {
+    private val packageNames: Array<String> = arrayOf(
+        "com.syu.carlink"
+    )
+
     private fun open() {
         val intent = Intent()
-        intent.setClassName("com.syu.carlink", "com.syu.carlink.MainActivity")
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        startActivity(intent)
+        packageNames.forEach {
+            try {
+                intent.setClassName(it, "$it.MainActivity")
+                startActivity(intent)
+            } finally {
+                finishActivity(0)
+            }
+        }
         finishActivity(0)
     }
 
@@ -20,6 +30,6 @@ class MainActivity : Activity() {
 
     override fun onResume() {
         super.onResume()
-        open()
+        finishActivity(0)
     }
 }
